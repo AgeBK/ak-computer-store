@@ -1,1 +1,35 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
+.category {
+  flex: 1;
+  margin: 0.8rem;
+}
+
+.category a {
+  text-decoration: none;
+}
+
+.category a h2 {
+  color: #286c93;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.category a h2:hover {
+  color: #000;
+}
+
+.imgCont {
+  border: 1px solid #d3d3d3;
+}
+
+.imgCont:hover {
+  border-color: #b2b0b0;
+}
