@@ -1,3 +1,10 @@
+18/08/23
+
+- Modified Add to cart functionality + created Add to cart button component
+- Created Select control (Sort), sorts order of products in Category component - alphabetically/price/sale items
+- Styled Category
+- Created Price Component
+
 17/08/23
 
 - Add to cart functionality
