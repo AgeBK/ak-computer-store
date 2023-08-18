@@ -1,0 +1,23 @@
+.container {
+  padding: 1.5rem;
+}
+
+.hdr {
+  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.infoCont {
+  display: flex;
+}
+
+.info {
+  flex: 0;
+  vertical-align: bottom;
+}
+
+.dimensions,
+.qty {
+  margin: 1rem 0;
+}

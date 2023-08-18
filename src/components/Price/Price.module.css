@@ -1,0 +1,22 @@
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.dollar {
+  font-size: 0.8rem;
+  vertical-align: text-top;
+}
+
+.sale {
+  background-color: #f00;
+  color: #fff;
+  padding: 0.2rem;
+  display: inline-block;
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
+  border-radius: 0.2rem;
+  position: relative;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0);
+}

@@ -2,3 +2,47 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.hdr {
+  display: flex;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.hdr::first-letter {
+  text-transform: uppercase;
+}
+
+.select {
+  margin-left: 0.5rem;
+}
+
+.product {
+  flex: 1;
+  margin: 0.5rem;
+  border: 1px solid #d3d3d3;
+  padding: 0.8rem;
+}
+
+.product:hover {
+  border-color: #b2b0b0;
+}
+
+.itemCont {
+  text-decoration: none;
+  color: #000;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  /* display: inline-block; */
+  flex-grow: 1;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.description {
+  margin: 0.5rem 0;
+}
