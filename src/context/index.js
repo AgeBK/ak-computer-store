@@ -6,6 +6,7 @@ const ComputerProvider = ({ children }) => {
   console.log("ComputerProvider");
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const ComputerProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.record.ProductCollection);
+        setLoading(false);
         setData(data.record.ProductCollection);
       })
       .catch((err) => setError(true));
@@ -27,16 +29,16 @@ const ComputerProvider = ({ children }) => {
 
   const addToCart = (productId, productName, price) => {
     let qty = cart[productId] ? cart[productId].qty + 1 : 1;
-    const arr = {
+    const obj = {
       ...cart,
       [productId]: { productId, productName, price, qty },
     };
-    console.log(arr);
-    setCart(arr);
+    console.log(obj);
+    setCart(obj);
   };
 
   return (
-    <ComputerContext.Provider value={{ data, error, addToCart }}>
+    <ComputerContext.Provider value={{ data, loading, error, addToCart, cart }}>
       {children}
     </ComputerContext.Provider>
   );

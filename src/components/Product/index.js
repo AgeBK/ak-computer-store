@@ -5,6 +5,7 @@ import AddToCart from "../AddToCart";
 import Loading from "../Loading";
 import Img from "../Image";
 import Price from "../Price";
+import SalesPitch from "../SalesPitch";
 import styles from "./Product.module.css";
 
 function Product() {
@@ -18,6 +19,8 @@ function Product() {
   }
 
   const {
+    mainCategory,
+    category,
     productId,
     productName,
     productPicUrl,
@@ -32,15 +35,23 @@ function Product() {
     weightUnit,
   } = product;
 
-  const handleCart = () => addToCart(productId, productName, price);
-
   return (
     <>
       {data.length ? (
         <article className={styles.container}>
+          <div className={styles.mainCategory}>
+            {mainCategory} <span className={styles.breadCrumbArrow}></span>
+            <Link
+              // to={`/${lastSegment(true, category)}`}
+              to={`/${category.toLowerCase()}`}
+              className={styles.category}
+            >
+              {category}
+            </Link>
+          </div>
           <div>
             <h1 className={styles.hdr}>{productName}</h1>
-            <Price props={[price, sale]} />
+            <Price props={[price, sale, "product"]} />
             <div className={styles.infoCont}>
               <div className={styles.info}>
                 <Img
@@ -58,18 +69,11 @@ function Product() {
                   <strong>
                     Dimensions <span>(cm's)</span>
                   </strong>
-                  <div className={styles.width}>
-                    <span>Width:</span>
-                    {width}
-                  </div>
-                  <div className={styles.depth}>
-                    <span>Depth:</span>
-                    {depth}
-                  </div>
-                  <div className={styles.height}>
-                    <span>Height:</span>
-                    {height}
-                  </div>
+                  <ul>
+                    <li>Height: {height}</li>
+                    <li>Width: {width}</li>
+                    <li>Depth: {depth}</li>
+                  </ul>
                   <div className={styles.weight}>
                     <span>Weight:</span>
                     {weightMeasure}
@@ -80,6 +84,7 @@ function Product() {
               </section>
             </div>
           </div>
+          <SalesPitch />
           <hr />
         </article>
       ) : (

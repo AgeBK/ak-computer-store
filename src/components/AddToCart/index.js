@@ -3,7 +3,7 @@ import { ComputerContext } from "../../context";
 import styles from "./AddToCart.module.css";
 
 const AddToCart = ({ props }) => {
-  console.log("addtocart");
+  // console.log("addtocart");
 
   const { addToCart } = useContext(ComputerContext);
   const [productId, productName, price] = props;

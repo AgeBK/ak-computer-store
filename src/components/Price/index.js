@@ -8,13 +8,19 @@ const Price = ({ props }) => {
         style: "currency",
         currency: "AUD",
       })
-      .replace(".00", ""); // just show $ if no cents value
+      .replace(".00", "")
+      .substr(1); // just show $ if no cents value
   };
 
-  const [price, sale] = props;
+  const [price, sale, loc] = props;
+  // console.log(loc);
+
   return (
-    <div className={styles.priceCont}>
-      <span className={styles.price}>{currency(price)}</span>
+    <div className={`${styles.priceCont} ${styles[loc]}`}>
+      <span className={styles.price}>
+        <span className={styles.dollar}>$</span>
+        {currency(price)}
+      </span>
       {sale && <span className={styles.sale}>{`${sale}% OFF`}</span>}
     </div>
   );

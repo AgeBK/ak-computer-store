@@ -1,17 +1,27 @@
 .price {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.product .price {
+  font-size: 2rem;
 }
 
 .dollar {
-  font-size: 0.8rem;
+  font-size: 1rem;
+  vertical-align: text-top;
+}
+
+.product .dollar {
+  font-size: 1.3rem;
   vertical-align: text-top;
 }
 
 .sale {
   background-color: #f00;
   color: #fff;
-  padding: 0.2rem;
+  padding: 0.1rem 0.2rem;
   display: inline-block;
   font-size: 0.7rem;
   margin-left: 0.3rem;

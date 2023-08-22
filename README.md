@@ -1,3 +1,9 @@
+19/08/23
+
+- created Container component
+- created SelesPitch component to fill blank area on Product component
+- added breadcrumb to Product component
+
 18/08/23
 
 - Modified Add to cart functionality + created Add to cart button component

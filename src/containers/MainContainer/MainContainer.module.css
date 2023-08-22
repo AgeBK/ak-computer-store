@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+}
+
+.hdr {
+  flex-grow: 1;
+  font-size: 24px;
+}
+
+.imgCont {
+  margin-top: auto;
+}
