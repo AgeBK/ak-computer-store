@@ -17,12 +17,7 @@ const MainContainer = ({ children }) => {
         <header className={styles.header}>
           <div className={styles.logo}>
             <Link to="/">
-              <Img
-                image={"AKComputerStore.png"}
-                imageStyle="logo"
-                imageAlt="AK Computers"
-              />
-              <Cart />
+              <Img image={"AK.png"} imageStyle="logo" imageAlt="AK Computers" />
             </Link>
           </div>
           <div className={styles.hdr}>
@@ -31,7 +26,7 @@ const MainContainer = ({ children }) => {
             </h1>
           </div>
           <div className={styles.imgCont}>
-            <Img image={"cartEmpty.png"} imageStyle="cart" imageAlt="cart" />
+            <Cart />
           </div>
         </header>
         <hr />

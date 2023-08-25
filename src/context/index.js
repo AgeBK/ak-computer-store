@@ -8,6 +8,7 @@ const ComputerProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     console.log("UE ComputerProvider");
@@ -29,16 +30,48 @@ const ComputerProvider = ({ children }) => {
 
   const addToCart = (productId, productName, price) => {
     let qty = cart[productId] ? cart[productId].qty + 1 : 1;
-    const obj = {
+    const cartObj = {
       ...cart,
       [productId]: { productId, productName, price, qty },
     };
-    console.log(obj);
-    setCart(obj);
+    console.log(cartObj);
+    setCart(cartObj);
+  };
+
+  const removeFromCart = (productId, removeAll) => {
+    const qty = cart[productId].qty;
+    const cartObj = { ...cart };
+
+    removeAll || qty === 1
+      ? delete cartObj[productId]
+      : cartObj[productId].qty--;
+
+    setCart(cartObj);
+  };
+  const currency = (val) => {
+    return val
+      .toLocaleString("en-AU", {
+        style: "currency",
+        currency: "AUD",
+      })
+      .replace(".00", "")
+      .substr(1); // just show $ if no cents value
   };
 
   return (
-    <ComputerContext.Provider value={{ data, loading, error, addToCart, cart }}>
+    <ComputerContext.Provider
+      value={{
+        addToCart,
+        cart,
+        currency,
+        data,
+        error,
+        loading,
+        removeFromCart,
+        setShowCart,
+        showCart,
+      }}
+    >
       {children}
     </ComputerContext.Provider>
   );

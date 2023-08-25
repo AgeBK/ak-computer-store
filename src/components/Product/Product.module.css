@@ -1,11 +1,15 @@
 .container {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .hdr {
   font-weight: normal;
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.category {
+  color: #2884ab;
 }
 
 .infoCont {

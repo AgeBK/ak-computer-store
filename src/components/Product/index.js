@@ -40,12 +40,8 @@ function Product() {
       {data.length ? (
         <article className={styles.container}>
           <div className={styles.mainCategory}>
-            {mainCategory} <span className={styles.breadCrumbArrow}></span>
-            <Link
-              // to={`/${lastSegment(true, category)}`}
-              to={`/${category.toLowerCase()}`}
-              className={styles.category}
-            >
+            {mainCategory} <span className={styles.breadCrumbArrow}> - </span>
+            <Link to={`/${category.toLowerCase()}`} className={styles.category}>
               {category}
             </Link>
           </div>

@@ -3,10 +3,16 @@
   flex-wrap: wrap;
 }
 
+.results {
+  color: #888;
+  margin-right: 1rem;
+}
+
 .hdr {
-  display: flex;
+  display: inline-block;
   text-align: center;
   text-transform: capitalize;
+  margin: 0.5rem 0 0 1rem;
 }
 
 .hdr::first-letter {

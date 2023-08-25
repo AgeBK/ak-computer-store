@@ -1,8 +1,13 @@
-19/08/23
+25/08/23
+- Got cart working and styling
+- added hover hook
+- style changes on most components
 
-- created Container component
-- created SelesPitch component to fill blank area on Product component
-- added breadcrumb to Product component
+22/08/23
+
+- Created Container, SalesPitch, Cart components
+- Added breadcrumb to Product component
+- Other various style changes and refactoring to existing components
 
 18/08/23
 

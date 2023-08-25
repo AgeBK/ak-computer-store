@@ -40,8 +40,8 @@ const SalesPitch = () => (
         We’ve got a good returns policy too. Simply keep the item as new and
         send it back to us within 14 days and we’ll give you store credit. Our
         support team is second to none, on the rare occasion there’s an issue
-        with your order, contact our Australian support and we’ll fix it up in
-        no time.
+        with your order, contact our Australian support and we’ll fix it up at
+        some stage no worries.
       </p>
     </div>
     <div className={styles.sales}>
@@ -70,23 +70,24 @@ const SalesPitch = () => (
     <div className={styles.sales}>
       <h3>Building the best computers since 1999</h3>
       <p>
-        Some people just want an efficient computer for their home office, while
-        others are looking for the most processing power possible. AK stock a
-        huge range of computers, laptops, graphics cards, networking equipment &
-        parts for all requirements.
+        Some people just want an inefficient computer for their home office,
+        while others are looking for the most processing power possible. AK
+        stock a huge range of computers, laptops, graphics cards, networking
+        equipment & parts for all requirements.
       </p>
       <p>
         If you’re looking to upgrade your computer for work, study, gaming or
-        general use then take a browse at our selection. While we always have
-        the newest products in stock, we ensure we keep an inventory of tried
-        and true PC equipment.
+        taking over the world then take a browse at our selection. While we
+        always have the newest products in stock, we ensure we keep an inventory
+        of tried and true PC equipment.
       </p>
       <p>
         We also distribute large orders for businesses, retail suppliers,
-        universities and everything in between. If you want to order a large
-        quantity then get in touch with our Australian based team, and with 3
-        locations in Sydney, you can rest easy knowing your order is being
-        handled by Australia’s most reliable computer store.
+        universities and everything in between. Don't sweat it, we've got ya
+        cuz. If you want to order a large quantity then get in touch with our
+        Australian based team, and with 3 locations in Sydney, you can rest easy
+        knowing your order is being handled by Australia’s most reliable
+        computer store.
       </p>
     </div>
   </section>

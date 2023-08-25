@@ -28,8 +28,8 @@ const Home = () => {
 
   return (
     <article>
-      <div>
-        <h1>Home</h1>
+      <div className={styles.intro}>
+        All of your computer needs at the best prices gauranteed!!
       </div>
       <section className={styles.container}>
         {categoriesArr?.map(({ productId, category, productPicUrl }) => {

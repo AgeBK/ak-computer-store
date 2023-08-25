@@ -1,39 +1,110 @@
-import React, { useContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
 import { ComputerContext } from "../../context";
-import Img from "../../components/Image";
+import useHover from "../../useHover";
 
+import Img from "../Image";
 import styles from "./Cart.module.css";
 
-const Cart = (props) => {
-  console.log("Cart");
+function Cart() {
+  const { addToCart, cart, currency, removeFromCart } =
+    useContext(ComputerContext);
 
-  //   const [data, setData] = useState({});
-  const { cart, loading } = useContext(ComputerContext);
-  console.log(cart);
-  console.log(loading);
+  const [ref, isHover] = useHover();
 
-  //   useEffect(() => {
-  //     console.log("Cart UE");
+  const cartDetails = Object.values(cart).reduce(
+    (acc, { qty, price }) => {
+      acc.totalQty += qty;
+      acc.totalPrice += price * qty;
+      return acc;
+    },
+    {
+      totalQty: 0,
+      totalPrice: 0,
+    }
+  );
+  // console.log(cartDetails);
 
-  //     setData(cart);
-  //   }, [cart]);
+  const { totalPrice, totalQty } = cartDetails;
+  const cartImage =
+    totalQty && totalPrice ? "cartNotEmpty.png" : "cartEmpty.png";
+
+  const CartClosed = () => {
+    return (
+      <div className={styles.cartClosedCont}>
+        <span className={styles.cartClosedQty}>{totalQty}</span>
+        <Img image={cartImage} imageStyle="cart" imageAlt="cart" />
+      </div>
+    );
+  };
+
+  const CartOpen = () => {
+    return (
+      <section className={styles.cart}>
+        <div className={styles.items}>
+          <ul className={styles.list}>
+            {Object.values(cart).map(
+              ({ productId, productName, qty, price }) => (
+                <li className={styles.item} key={productId} value={productName}>
+                  <h3 className={styles.hdr}>{productName}</h3>
+                  <div className={styles.details}>
+                    {<span className={styles.qty}>Quantity: {qty}</span>}
+                    <div className={styles.price}>{currency(price)}</div>
+                  </div>
+                  <div className={styles.buttons}>
+                    <span className={styles.oneItem}>
+                      <button
+                        onClick={(e) => {
+                          // e.stopPropagation();
+                          removeFromCart(productId, false);
+                        }}
+                        value="-"
+                        className={styles.btn}
+                      >
+                        -
+                      </button>
+                      <span className={styles.amount}>{qty}</span>
+                      <button
+                        onClick={(e) => {
+                          // e.stopPropagation();
+                          addToCart(productId, productName, price);
+                        }}
+                        value="+"
+                        className={styles.btn}
+                      >
+                        +
+                      </button>
+                    </span>
+
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        removeFromCart(productId, true);
+                      }}
+                      className={styles.remove}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+        <div className={styles.total}>
+          <span>Total Items: {totalQty}</span>
+          <span>Total: {currency(totalPrice)}</span>
+        </div>
+      </section>
+    );
+  };
 
   return (
-    <section className={styles.container}>
-      <div>Cart</div>
-
-      <div className={styles.cartCont}>
-        {Object.values(cart).map((val) => (
-          <div key={val.productId}>
-            <span className={styles.product}>{val.productName}</span>
-            <span className={styles.qty}>{val.qty}</span>
-            <span className={styles.product}>{val.price}</span>
-          </div>
-        ))}
+    <div className={styles.cartOuterContainer} ref={ref}>
+      <div className={styles.container}>
+        {isHover && totalQty && totalPrice ? <CartOpen /> : <CartClosed />}
       </div>
-    </section>
+    </div>
   );
-};
+}
 
 export default Cart;

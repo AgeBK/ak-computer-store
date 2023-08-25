@@ -29,14 +29,14 @@ function Category() {
 
   return (
     <>
-      {categoryArr.length ? (
+      {categoryArr && (
         <article>
           <div>
-            <h2 className={styles.hdr}>{id}</h2>
-            <h2 className={styles.results}>{categoryArr.length} Results</h2>
+            <h2 className={styles.hdr}>{id} </h2>
+            <span className={styles.results}>({categoryArr.length})</span>
             <Sort props={[categoryArr, setCategoryArr]} />
           </div>
-          <hr />
+          {/* <hr /> */}
           <section className={styles.container}>
             {categoryArr?.map(
               ({
@@ -72,8 +72,6 @@ function Category() {
             )}
           </section>
         </article>
-      ) : (
-        <Loading />
       )}
     </>
   );

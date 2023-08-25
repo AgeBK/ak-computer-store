@@ -1,19 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ComputerContext } from "../../context";
 import styles from "./Price.module.css";
 
 const Price = ({ props }) => {
-  const currency = (val) => {
-    return val
-      .toLocaleString("en-AU", {
-        style: "currency",
-        currency: "AUD",
-      })
-      .replace(".00", "")
-      .substr(1); // just show $ if no cents value
-  };
-
+  const { currency } = useContext(ComputerContext);
   const [price, sale, loc] = props;
-  // console.log(loc);
 
   return (
     <div className={`${styles.priceCont} ${styles[loc]}`}>
