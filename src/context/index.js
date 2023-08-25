@@ -8,7 +8,6 @@ const ComputerProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState([]);
-  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     console.log("UE ComputerProvider");
@@ -68,8 +67,6 @@ const ComputerProvider = ({ children }) => {
         error,
         loading,
         removeFromCart,
-        setShowCart,
-        showCart,
       }}
     >
       {children}

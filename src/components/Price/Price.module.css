@@ -1,11 +1,16 @@
 .price {
+  display: inline-block;
   font-weight: bold;
+}
+
+.category .price {
   font-size: 1.5rem;
   vertical-align: middle;
 }
 
 .product .price {
   font-size: 2rem;
+  vertical-align: middle;
 }
 
 .dollar {
@@ -29,4 +34,11 @@
   position: relative;
   border: 1px solid #000;
   box-shadow: 1px 1px 4px rgba(0, 0, 0);
+}
+
+.cartItem {
+  font-size: 1rem;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: auto;
 }

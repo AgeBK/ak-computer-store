@@ -1,7 +1,15 @@
+26/08/23
+
+- Fixed financial sort for Category
+- Set max-width on MainContainer
+- Numerous style changes most components
+- Responsive style changes for smaller screens
+
 25/08/23
+
 - Got cart working and styling
-- added hover hook
-- style changes on most components
+- Added hover hook
+- Style changes on most components
 
 22/08/23
 

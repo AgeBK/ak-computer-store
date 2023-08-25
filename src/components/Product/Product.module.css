@@ -25,3 +25,9 @@
 .qty {
   margin: 1rem 0;
 }
+
+@media screen and (max-width: 800px) {
+  .infoCont {
+    flex-direction: column;
+  }
+}

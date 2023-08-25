@@ -1,13 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ComputerContext } from "../../context";
 import useHover from "../../useHover";
-
+import Price from "../Price";
 import Img from "../Image";
 import styles from "./Cart.module.css";
 
 function Cart() {
-  const { addToCart, cart, currency, removeFromCart } =
-    useContext(ComputerContext);
+  const { addToCart, cart, removeFromCart } = useContext(ComputerContext);
 
   const [ref, isHover] = useHover();
 
@@ -22,7 +21,6 @@ function Cart() {
       totalPrice: 0,
     }
   );
-  // console.log(cartDetails);
 
   const { totalPrice, totalQty } = cartDetails;
   const cartImage =
@@ -48,13 +46,14 @@ function Cart() {
                   <h3 className={styles.hdr}>{productName}</h3>
                   <div className={styles.details}>
                     {<span className={styles.qty}>Quantity: {qty}</span>}
-                    <div className={styles.price}>{currency(price)}</div>
+                    {/* <div className={styles.price}>{currency(price)}</div> */}{" "}
+                    <Price props={[price, null, "cartItem"]} />
                   </div>
+
                   <div className={styles.buttons}>
                     <span className={styles.oneItem}>
                       <button
                         onClick={(e) => {
-                          // e.stopPropagation();
                           removeFromCart(productId, false);
                         }}
                         value="-"
@@ -65,7 +64,6 @@ function Cart() {
                       <span className={styles.amount}>{qty}</span>
                       <button
                         onClick={(e) => {
-                          // e.stopPropagation();
                           addToCart(productId, productName, price);
                         }}
                         value="+"
@@ -92,7 +90,7 @@ function Cart() {
         </div>
         <div className={styles.total}>
           <span>Total Items: {totalQty}</span>
-          <span>Total: {currency(totalPrice)}</span>
+          <Price props={[totalPrice, null, "cartItem"]} />
         </div>
       </section>
     );

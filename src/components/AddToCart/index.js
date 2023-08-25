@@ -12,7 +12,6 @@ const AddToCart = ({ props }) => {
     <button
       className={styles.cart}
       onClick={(e) => {
-        e.stopPropagation();
         addToCart(productId, productName, price);
       }}
     >

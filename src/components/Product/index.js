@@ -9,7 +9,8 @@ import SalesPitch from "../SalesPitch";
 import styles from "./Product.module.css";
 
 function Product() {
-  const { data, addToCart } = useContext(ComputerContext);
+  console.log("Product");
+  const { data } = useContext(ComputerContext);
   const { id } = useParams();
   let product = {};
 
@@ -37,7 +38,7 @@ function Product() {
 
   return (
     <>
-      {data.length ? (
+      {!!data.length && (
         <article className={styles.container}>
           <div className={styles.mainCategory}>
             {mainCategory} <span className={styles.breadCrumbArrow}> - </span>
@@ -83,8 +84,6 @@ function Product() {
           <SalesPitch />
           <hr />
         </article>
-      ) : (
-        <Loading />
       )}
     </>
   );

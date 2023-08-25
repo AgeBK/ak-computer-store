@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { ComputerContext } from "../../context";
 import Cart from "../../components/Cart";
@@ -6,10 +6,21 @@ import Img from "../../components/Image";
 import Loading from "../../components/Loading";
 import styles from "./MainContainer.module.css";
 
-// function MainContainer(WrappedComponent) {
 const MainContainer = ({ children }) => {
   const { loading, error } = useContext(ComputerContext);
   console.log("MM");
+
+  const Content = () => {
+    if (error) {
+      console.log("error");
+      return <div>Error</div>;
+    } else if (loading) {
+      console.log("loading");
+      return <Loading />;
+    } else {  
+      return children;
+    }
+  };
 
   return (
     <Router>
@@ -30,9 +41,7 @@ const MainContainer = ({ children }) => {
           </div>
         </header>
         <hr />
-        {children}
-        {loading && <Loading />}
-        {error && <div>Error</div>}
+        <Content />
       </section>
     </Router>
   );

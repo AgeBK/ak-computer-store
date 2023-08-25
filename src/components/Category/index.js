@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ComputerContext } from "../../context";
 import AddToCart from "../AddToCart";
-import Loading from "../Loading";
 import Sort from "../Sort";
 import Img from "../Image";
 import Price from "../Price";
@@ -11,13 +10,13 @@ import styles from "./Category.module.css";
 function Category() {
   console.log("Category");
 
-  const { data, error } = useContext(ComputerContext);
+  const { data } = useContext(ComputerContext);
   const [categoryArr, setCategoryArr] = useState([]);
   const { id } = useParams();
-  // let categoryArr = [];
   console.log(data);
 
   useEffect(() => {
+    console.log("Category UE");
     if (data.length) {
       // hyphenate spaces
       const catLowerCase = (cat) => cat.toLowerCase().replace(/ /gi, "-");
@@ -32,7 +31,7 @@ function Category() {
       {categoryArr && (
         <article>
           <div>
-            <h2 className={styles.hdr}>{id} </h2>
+            <h2 className={styles.hdr}>{id}</h2>
             <span className={styles.results}>({categoryArr.length})</span>
             <Sort props={[categoryArr, setCategoryArr]} />
           </div>
@@ -62,7 +61,7 @@ function Category() {
                           imageAlt={productName}
                         />
                       </div>
-                      <Price props={[price, sale]} />
+                      <Price props={[price, sale, "category"]} />
                       <div className={styles.description}>{description}</div>
                     </Link>
                     <AddToCart props={[productId, productName, price]} />

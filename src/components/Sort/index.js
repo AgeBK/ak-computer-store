@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Sort.module.css";
 
 const Sort = ({ props }) => {
@@ -12,13 +12,11 @@ const Sort = ({ props }) => {
   };
 
   const financially = (reverseOrder) => {
-    sortedArr.sort((a, b) => (a.productName < b.productName ? -1 : 1));
+    sortedArr.sort((a, b) => (a.price < b.price ? -1 : 1));
     reverseOrder && sortedArr.reverse();
   };
 
-  const salesItemsFirst = () => {
-    sortedArr.sort((a) => (a.sale ? -1 : 1));
-  };
+  const salesItemsFirst = () => sortedArr.sort((a) => (a.sale ? -1 : 1));
 
   const sortDDL = (e) => {
     switch (e.target.value) {
@@ -47,9 +45,11 @@ const Sort = ({ props }) => {
   };
 
   return (
-    <select name="filters" onChange={sortDDL}>
-      {choicesArr.map((val) => (
-        <option value={val.toLowerCase()}>{val}</option>
+    <select name="filters" onChange={sortDDL} className={styles.container}>
+      {choicesArr.map((val, ind) => (
+        <option value={val.toLowerCase()} key={ind}>
+          {val}
+        </option>
       ))}
     </select>
   );

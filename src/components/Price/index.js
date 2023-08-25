@@ -7,7 +7,7 @@ const Price = ({ props }) => {
   const [price, sale, loc] = props;
 
   return (
-    <div className={`${styles.priceCont} ${styles[loc]}`}>
+    <div className={styles[loc]}>
       <span className={styles.price}>
         <span className={styles.dollar}>$</span>
         {currency(price)}
