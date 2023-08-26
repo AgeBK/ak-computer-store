@@ -4,11 +4,14 @@ import { ComputerContext } from "../../context";
 import Cart from "../../components/Cart";
 import Img from "../../components/Image";
 import Loading from "../../components/Loading";
+import Footer from "../../components/Footer";
 import styles from "./MainContainer.module.css";
 
-const MainContainer = ({ children }) => {
+function MainContainer({ children }) {
   const { loading, error } = useContext(ComputerContext);
   console.log("MM");
+
+  const test = useMemo(() => children, [children]);
 
   const Content = () => {
     if (error) {
@@ -17,8 +20,8 @@ const MainContainer = ({ children }) => {
     } else if (loading) {
       console.log("loading");
       return <Loading />;
-    } else {  
-      return children;
+    } else {
+      return test;
     }
   };
 
@@ -42,8 +45,10 @@ const MainContainer = ({ children }) => {
         </header>
         <hr />
         <Content />
+        <hr />
+        <Footer />
       </section>
     </Router>
   );
-};
+}
 export default MainContainer;

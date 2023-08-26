@@ -1,6 +1,12 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+}
+
+.hdrCont {
+  display: flex;
+  align-items: center;
 }
 
 .results {
@@ -10,7 +16,6 @@
 
 .hdr {
   display: inline-block;
-  text-align: center;
   text-transform: capitalize;
   margin: 0.5rem 0.2rem 0 1rem;
 }
@@ -42,12 +47,19 @@
 .title {
   font-size: 1.2rem;
   font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-  margin-right: 1rem;
-  text-align: center;
 }
 
 .description {
   margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  .hdrCont {
+    flex-direction: column;
+  }
+
+  .results {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }

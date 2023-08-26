@@ -1,3 +1,8 @@
+27/08/23
+
+- Many style updates
+- Added Footer component
+
 26/08/23
 
 - Fixed financial sort for Category

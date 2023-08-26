@@ -10,7 +10,7 @@ import styles from "./Product.module.css";
 
 function Product() {
   console.log("Product");
-  const { data } = useContext(ComputerContext);
+  const { data, hyphenate } = useContext(ComputerContext);
   const { id } = useParams();
   let product = {};
 
@@ -40,9 +40,9 @@ function Product() {
     <>
       {!!data.length && (
         <article className={styles.container}>
-          <div className={styles.mainCategory}>
+          <div>
             {mainCategory} <span className={styles.breadCrumbArrow}> - </span>
-            <Link to={`/${category.toLowerCase()}`} className={styles.category}>
+            <Link to={`/${hyphenate(category)}`} className={styles.category}>
               {category}
             </Link>
           </div>
@@ -50,7 +50,7 @@ function Product() {
             <h1 className={styles.hdr}>{productName}</h1>
             <Price props={[price, sale, "product"]} />
             <div className={styles.infoCont}>
-              <div className={styles.info}>
+              <div className={styles.imgCont}>
                 <Img
                   image={productPicUrl}
                   imageStyle="product"
@@ -82,7 +82,6 @@ function Product() {
             </div>
           </div>
           <SalesPitch />
-          <hr />
         </article>
       )}
     </>

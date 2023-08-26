@@ -57,6 +57,9 @@ const ComputerProvider = ({ children }) => {
       .substr(1); // just show $ if no cents value
   };
 
+  const hyphenate = (text) => text.toLowerCase().replace(/ /gi, "-");
+  const deHyphenate = (text) => text.toLowerCase().replace(/-/gi, " ");
+
   return (
     <ComputerContext.Provider
       value={{
@@ -64,7 +67,9 @@ const ComputerProvider = ({ children }) => {
         cart,
         currency,
         data,
+        deHyphenate,
         error,
+        hyphenate,
         loading,
         removeFromCart,
       }}

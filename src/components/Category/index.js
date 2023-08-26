@@ -10,32 +10,30 @@ import styles from "./Category.module.css";
 function Category() {
   console.log("Category");
 
-  const { data } = useContext(ComputerContext);
+  const { data, deHyphenate, hyphenate } = useContext(ComputerContext);
   const [categoryArr, setCategoryArr] = useState([]);
   const { id } = useParams();
+
   console.log(data);
+  console.log(id);
 
   useEffect(() => {
     console.log("Category UE");
     if (data.length) {
-      // hyphenate spaces
-      const catLowerCase = (cat) => cat.toLowerCase().replace(/ /gi, "-");
-      // filter data arr by category
-      const arr = data.filter(({ category }) => catLowerCase(category) === id);
+      const arr = data.filter(({ category }) => hyphenate(category) === id);
       setCategoryArr(arr);
     }
-  }, [data, id]);
+  }, [data, id, hyphenate]);
 
   return (
     <>
       {categoryArr && (
         <article>
-          <div>
-            <h2 className={styles.hdr}>{id}</h2>
+          <div className={styles.hdrCont}>
+            <h2 className={styles.hdr}>{deHyphenate(id)}</h2>
             <span className={styles.results}>({categoryArr.length})</span>
             <Sort props={[categoryArr, setCategoryArr]} />
           </div>
-          {/* <hr /> */}
           <section className={styles.container}>
             {categoryArr?.map(
               ({

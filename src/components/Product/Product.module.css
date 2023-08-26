@@ -1,11 +1,11 @@
 .container {
   padding: 1rem;
+  height: 100vh;
 }
 
 .hdr {
   font-weight: normal;
   font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .category {
@@ -14,11 +14,11 @@
 
 .infoCont {
   display: flex;
+  align-items: center;
 }
 
-.info {
-  flex: 0;
-  vertical-align: bottom;
+.imgCont {
+  margin-right: 1rem;
 }
 
 .dimensions,
@@ -29,5 +29,6 @@
 @media screen and (max-width: 800px) {
   .infoCont {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
