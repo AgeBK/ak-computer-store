@@ -4,8 +4,8 @@ import { ComputerContext } from "../../context";
 import Img from "../Image";
 import styles from "./Home.module.css";
 
-const Home = () => {
-  const { data } = useContext(ComputerContext);
+function Home() {
+  const { data, hyphenate } = useContext(ComputerContext);
 
   // create list of unique categories from data
   const categoriesObj = data.reduce(
@@ -20,30 +20,21 @@ const Home = () => {
 
   const categoriesArr = Object.values(categoriesObj);
 
-  console.log(categoriesObj);
-  console.log(Object.values(categoriesArr));
-
-  // hyphenate spaces
-  const catLowerCase = (cat) => cat.toLowerCase().replace(/ /gi, "-");
-
   return (
     <article>
-      <div className={styles.intro}>
+      <div className={styles.slogan}>
         All of your computer needs at the best prices guaranteed!!
       </div>
       <section className={styles.container}>
         {categoriesArr?.map(({ productId, category, productPicUrl }) => {
           return (
             <div className={styles.category} key={productId}>
-              <Link to={catLowerCase(category)} className={styles.link}>
+              <Link to={hyphenate(category)}>
                 <div className={styles.imgCont}>
-                  <Img
-                    image={productPicUrl}
-                    imageStyle="home"
-                    imageAlt={category}
-                  />
+                  {/* TODO: redundant alt text so removed */}
+                  <Img image={productPicUrl} imageStyle="home" imageAlt="" />
                 </div>
-                <h2 className={styles.h2}>{category}</h2>
+                <h2>{category}</h2>
               </Link>
             </div>
           );
@@ -51,6 +42,6 @@ const Home = () => {
       </section>
     </article>
   );
-};
+}
 
 export default Home;

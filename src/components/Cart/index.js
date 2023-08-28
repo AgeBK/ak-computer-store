@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { ComputerContext } from "../../context";
 import useHover from "../../useHover";
 import Price from "../Price";
@@ -6,9 +6,11 @@ import Img from "../Image";
 import styles from "./Cart.module.css";
 
 function Cart() {
+  console.log("Cart");
   const { addToCart, cart, removeFromCart } = useContext(ComputerContext);
-
   const [ref, isHover] = useHover();
+  const highLightValue = useRef(0);
+  let highLight = false;
 
   const cartDetails = Object.values(cart).reduce(
     (acc, { qty, price }) => {
@@ -26,9 +28,21 @@ function Cart() {
   const cartImage =
     totalQty && totalPrice ? "cartNotEmpty.png" : "cartEmpty.png";
 
+  // make cart stand out on update
+  if (totalQty > 0 && totalQty !== highLightValue.current) {
+    highLightValue.current = totalQty;
+    highLight = true;
+  } else {
+    highLight = false;
+  }
+
   const CartClosed = () => {
     return (
-      <div className={styles.cartClosedCont}>
+      <div
+        className={`${styles.cartClosedCont}  ${
+          highLight && styles.cartClosedContQty
+        }`}
+      >
         <span className={styles.cartClosedQty}>{totalQty}</span>
         <Img image={cartImage} imageStyle="cart" imageAlt="cart" />
       </div>

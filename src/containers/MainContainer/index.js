@@ -1,9 +1,9 @@
 import React, { useContext, useMemo } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { ComputerContext } from "../../context";
-import Cart from "../../components/Cart";
-import Img from "../../components/Image";
+import Header from "../../components/Header";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import Footer from "../../components/Footer";
 import styles from "./MainContainer.module.css";
 
@@ -11,12 +11,12 @@ function MainContainer({ children }) {
   const { loading, error } = useContext(ComputerContext);
   console.log("MM");
 
-  const test = useMemo(() => children, [children]);
+  const test = useMemo(() => children, [children]); // TODO: ??
 
   const Content = () => {
     if (error) {
       console.log("error");
-      return <div>Error</div>;
+      return <Error />;
     } else if (loading) {
       console.log("loading");
       return <Loading />;
@@ -27,27 +27,13 @@ function MainContainer({ children }) {
 
   return (
     <Router>
-      <section className={styles.container}>
-        <header className={styles.header}>
-          <div className={styles.logo}>
-            <Link to="/">
-              <Img image={"AK.png"} imageStyle="logo" imageAlt="AK Computers" />
-            </Link>
-          </div>
-          <div className={styles.hdr}>
-            <h1>
-              AK <span>COMPUTERS</span>
-            </h1>
-          </div>
-          <div className={styles.imgCont}>
-            <Cart />
-          </div>
-        </header>
+      <main className={styles.container}>
+        <Header />
         <hr />
         <Content />
         <hr />
         <Footer />
-      </section>
+      </main>
     </Router>
   );
 }

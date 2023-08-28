@@ -1,0 +1,13 @@
+.container {
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+}
+
+.link {
+  color: #285cab;
+}

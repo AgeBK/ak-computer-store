@@ -3,7 +3,7 @@ import styles from "./SalesPitch.module.css";
 const SalesPitch = () => (
   <section className={styles.salesPitch}>
     <div className={styles.sales}>
-      <h3>Award Winning Service at the Best Price</h3>
+      <h2>Award Winning Service at the Best Price</h2>
       <p>
         If you’re looking for computers, parts or accessories. AK Computers has
         been Australia’s most trusted computer store for over 20 years. All of
@@ -21,7 +21,7 @@ const SalesPitch = () => (
       </p>
     </div>
     <div className={styles.sales}>
-      <h3>The best computers Sydney wide</h3>
+      <h2>The best computers Sydney wide</h2>
       <p>
         We appreciate that online consumers value reliable shipping and
         Australian warranties on the products they purchase, so they can enjoy
@@ -45,7 +45,7 @@ const SalesPitch = () => (
       </p>
     </div>
     <div className={styles.sales}>
-      <h3>Experience true gaming bliss</h3>
+      <h2>Experience true gaming bliss</h2>
       <p>
         Gamers everywhere demand high performance from their computers. Whether
         trying to compete in high level FPS games or become captivated in the
@@ -68,7 +68,7 @@ const SalesPitch = () => (
       </p>
     </div>
     <div className={styles.sales}>
-      <h3>Building the best computers since 1999</h3>
+      <h2>Building the best computers since 1999</h2>
       <p>
         Some people just want an inefficient computer for their home office,
         while others are looking for the most processing power possible. AK

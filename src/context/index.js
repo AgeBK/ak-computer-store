@@ -1,8 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 const ComputerContext = createContext();
 
-// HOC provider component
-const ComputerProvider = ({ children }) => {
+function ComputerProvider({ children }) {
   console.log("ComputerProvider");
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
@@ -77,5 +76,5 @@ const ComputerProvider = ({ children }) => {
       {children}
     </ComputerContext.Provider>
   );
-};
+}
 export { ComputerProvider, ComputerContext };

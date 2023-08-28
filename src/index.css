@@ -7,9 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  margin: 0;
+article {
+  padding-top: 82px;
 }
+
+/* h1 {
+  margin: 0;
+} */
 
 a {
   text-decoration: none;

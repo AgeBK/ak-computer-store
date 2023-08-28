@@ -1,7 +1,7 @@
 .cartOuterContainer {
   position: relative;
   padding: 1rem;
-  margin-right: 1rem;
+  /* margin-right: 2rem; */
   font-size: 0.9rem;
 }
 
@@ -35,7 +35,7 @@
 
 .hdr {
   text-align: center;
-  color: #2884ab;
+  color: #285cab;
   margin: 0 0 0.5rem;
 }
 
@@ -110,6 +110,22 @@
   background-color: #fff;
   z-index: 1;
   width: auto;
+  margin-right: 1rem;
+}
+
+.cartClosedContQty {
+  animation-name: bg;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes bg {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: yellow;
+  }
 }
 
 .cartImg {
@@ -119,9 +135,6 @@
 
 .cartClosedQty {
   font-size: 0.7rem;
-  border-radius: 0.5rem;
-  padding: 0 0.2rem;
   display: block;
   text-align: right;
-  color: #888;
 }

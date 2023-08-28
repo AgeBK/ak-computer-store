@@ -1,13 +1,8 @@
-/* html,
-body,
-.loaderContOuter {
-  height: 100%;
-} */
-
 .loaderCont {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .loader,

@@ -1,3 +1,9 @@
+28/08/23
+
+- Style/refactoring
+- fixed footer bug
+- Added Header/Error Component
+
 27/08/23
 
 - Many style updates

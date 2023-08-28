@@ -3,18 +3,15 @@ import { ComputerContext } from "../../context";
 import styles from "./AddToCart.module.css";
 
 const AddToCart = ({ props }) => {
-  // console.log("addtocart");
-
   const { addToCart } = useContext(ComputerContext);
   const [productId, productName, price] = props;
 
+  const handleClick = () => {
+    addToCart(productId, productName, price);
+  };
+
   return (
-    <button
-      className={styles.cart}
-      onClick={(e) => {
-        addToCart(productId, productName, price);
-      }}
-    >
+    <button className={styles.cart} onClick={handleClick}>
       Add to cart
     </button>
   );

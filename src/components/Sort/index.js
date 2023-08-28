@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./Sort.module.css";
 
-const Sort = ({ props }) => {
+function Sort({ props }) {
   const [categoryArr, setCategoryArr] = props;
   const choicesArr = ["Relevance", "A-Z", "Z-A", "$", "$$$", "Sale"];
   let sortedArr = [...categoryArr];
 
   const alphabetically = (reverseOrder) => {
-    sortedArr.sort((a, b) => (a.productName < b.productName ? -1 : 1));
+    sortedArr.sort((a, b) =>
+      a.productName.toLowerCase() < b.productName.toLowerCase() ? -1 : 1
+    );
     reverseOrder && sortedArr.reverse();
   };
 
@@ -45,14 +47,24 @@ const Sort = ({ props }) => {
   };
 
   return (
-    <select name="filters" onChange={sortDDL} className={styles.container}>
-      {choicesArr.map((val, ind) => (
-        <option value={val.toLowerCase()} key={ind}>
-          {val}
-        </option>
-      ))}
-    </select>
+    <>
+      <label htmlFor="sort">Sort items:</label>
+      <br />
+      <select
+        id="sort"
+        name="filters"
+        onChange={sortDDL}
+        className={styles.container}
+        aria-labelledby="lbl-sort-items"
+      >
+        {choicesArr.map((val, ind) => (
+          <option value={val.toLowerCase()} key={ind}>
+            {val}
+          </option>
+        ))}
+      </select>
+    </>
   );
-};
+}
 
 export default Sort;
