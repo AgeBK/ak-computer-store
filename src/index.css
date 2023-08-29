@@ -7,13 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-article {
-  padding-top: 82px;
+main {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* height: 100vh; */
 }
 
-/* h1 {
-  margin: 0;
-} */
+article {
+  padding-top: 101px;
+}
 
 a {
   text-decoration: none;
@@ -28,4 +31,10 @@ ul {
 
 hr {
   padding: 0;
+}
+
+@media screen and (max-width: 500px) {
+  article {
+    padding-top: 86px;
+  }
 }

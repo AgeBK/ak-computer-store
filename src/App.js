@@ -1,20 +1,23 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import MainContainer from "./containers/MainContainer";
 import Home from "./components/Home";
 import Category from "./components/Category";
 import Product from "./components/Product";
-// import styles from "./App.module.css";
+import ScrollToTop from "./components/ScrollTo";
 
 function App() {
   return (
-    <MainContainer>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/:id" element={<Category />} />
-        <Route exact path="/:id/:id" element={<Product />} />
-      </Routes>
-    </MainContainer>
+    <Router>
+      <MainContainer>
+        <ScrollToTop />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/:id" element={<Category />} />
+          <Route exact path="/:id/:id" element={<Product />} />
+        </Routes>
+      </MainContainer>
+    </Router>
   );
 }
 

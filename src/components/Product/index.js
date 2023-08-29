@@ -41,7 +41,7 @@ function Product() {
         <>
           <article>
             <div className={styles.container}>
-              <div>
+              <div className={styles.breadCrumb}>
                 {mainCategory}{" "}
                 <span className={styles.breadCrumbArrow}> - </span>
                 <Link

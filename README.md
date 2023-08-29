@@ -1,3 +1,8 @@
+29/08/23
+
+- Added ScrollToTop and Content component
+- Style/refactoring
+
 28/08/23
 
 - Style/refactoring

@@ -2,6 +2,10 @@
   padding: 1rem;
 }
 
+.breadCrumb {
+  text-align: left;
+}
+
 .hdr {
   font-weight: normal;
   font-size: 2rem;
