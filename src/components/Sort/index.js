@@ -48,21 +48,21 @@ function Sort({ props }) {
 
   return (
     <>
-      <label htmlFor="sort">Sort items:</label>
-      <br />
-      <select
-        id="sort"
-        name="filters"
-        onChange={sortDDL}
-        className={styles.container}
-        aria-labelledby="lbl-sort-items"
-      >
-        {choicesArr.map((val, ind) => (
-          <option value={val.toLowerCase()} key={ind}>
-            {val}
-          </option>
-        ))}
-      </select>
+      <label htmlFor="sort" id="lbl-sort-items">
+        <select
+          id="sort"
+          name="filters"
+          onChange={sortDDL}
+          className={styles.container}
+          aria-labelledby="lbl-sort-items"
+        >
+          {choicesArr.map((val, ind) => (
+            <option value={val.toLowerCase()} key={ind}>
+              {val}
+            </option>
+          ))}
+        </select>
+      </label>
     </>
   );
 }

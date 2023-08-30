@@ -77,7 +77,7 @@ function Product() {
                         <li>Depth: {depth}</li>
                       </ul>
                       <div className={styles.weight}>
-                        <span>Weight:</span>
+                        <span>Weight: </span>
                         {weightMeasure}
                         {weightUnit}
                       </div>

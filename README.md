@@ -1,3 +1,9 @@
+30/08/23
+
+- Fixed footer not aligning to bottom
+- Changed hover hook to accommodate for mobile
+- Style/refactoring
+
 29/08/23
 
 - Added ScrollToTop and Content component
