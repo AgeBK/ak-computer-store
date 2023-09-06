@@ -2,15 +2,12 @@ import { createContext, useEffect, useState } from "react";
 const ComputerContext = createContext();
 
 function ComputerProvider({ children }) {
-  console.log("ComputerProvider");
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    console.log("UE ComputerProvider");
-
     fetch("https://api.jsonbin.io/v3/b/64dac8e4b89b1e2299d0be92", {
       headers: {
         "X-Master-Key":
@@ -19,7 +16,6 @@ function ComputerProvider({ children }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.record.ProductCollection);
         setLoading(false);
         setData(data.record.ProductCollection);
       })
@@ -32,7 +28,6 @@ function ComputerProvider({ children }) {
       ...cart,
       [productId]: { productId, productName, price, qty },
     };
-    console.log(cartObj);
     setCart(cartObj);
   };
 

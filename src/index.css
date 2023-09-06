@@ -7,13 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* height: 100vh; */
-}
-
 article {
   padding-top: 101px;
 }

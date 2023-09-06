@@ -27,3 +27,13 @@
     font-size: 28px;
   }
 }
+
+@media screen and (max-width: 380px) {
+  .header {
+    padding: 0.3rem;
+  }
+
+  .hdr {
+    font-size: 22px;
+  }
+}

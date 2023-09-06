@@ -1,16 +1,15 @@
 import React, { useContext, useRef } from "react";
 import { ComputerContext } from "../../context";
-import useOpen from "../../hooks/useOpen";
+import useCartState from "../../hooks/useCartState";
 import Price from "../Price";
 import Img from "../Image";
+import Button from "../Button";
 import styles from "./Cart.module.css";
 
 function Cart() {
-  console.log("Cart");
   const { addToCart, cart, removeFromCart } = useContext(ComputerContext);
-  const [ref, isHover, handleClick] = useOpen();
+  const [ref, isOpen, isTouchDevice, handleClose] = useCartState();
   const highLightValue = useRef(0);
-  const isTouchDevice = window.ontouchstart !== undefined;
   let highLight = false;
 
   const cartDetails = Object.values(cart).reduce(
@@ -55,7 +54,11 @@ function Cart() {
   const CartOpen = () => {
     return (
       <section className={styles.cart}>
-        {isTouchDevice && <div className={styles.cartClose}>X</div>}
+        {isTouchDevice && (
+          <div className={styles.cartClose} onClick={handleClose}>
+            X
+          </div>
+        )}
         <ul className={styles.list}>
           {Object.values(cart).map(({ productId, productName, qty, price }) => (
             <li className={styles.item} key={productId} value={productName}>
@@ -67,36 +70,32 @@ function Cart() {
 
               <div className={styles.buttons}>
                 <span className={styles.oneItem}>
-                  <button
+                  <Button
                     onClick={(e) => {
                       removeFromCart(productId, false);
                     }}
-                    value="-"
-                    className={styles.btn}
+                    css="btn"
                   >
                     -
-                  </button>
+                  </Button>
                   <span className={styles.amount}>{qty}</span>
-                  <button
-                    onClick={(e) => {
+                  <Button
+                    onClick={() => {
                       addToCart(productId, productName, price);
                     }}
-                    value="+"
-                    className={styles.btn}
+                    css="btn"
                   >
                     +
-                  </button>
+                  </Button>
                 </span>
-
-                <button
+                <Button
                   onClick={(e) => {
-                    e.stopPropagation();
                     removeFromCart(productId, true);
                   }}
-                  className={styles.remove}
+                  css="removeBtn"
                 >
                   Remove
-                </button>
+                </Button>
               </div>
             </li>
           ))}
@@ -111,8 +110,8 @@ function Cart() {
 
   return (
     <div className={styles.cartOuterContainer}>
-      <div className={styles.container} ref={ref} onClick={handleClick}>
-        {isHover && totalQty && totalPrice ? <CartOpen /> : <CartClosed />}
+      <div className={styles.container} ref={ref}>
+        {isOpen && totalQty && totalPrice ? <CartOpen /> : <CartClosed />}
       </div>
     </div>
   );

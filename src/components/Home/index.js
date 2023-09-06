@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ComputerContext } from "../../context";
 import Img from "../Image";
+import Error from "../Error";
 import styles from "./Home.module.css";
 
 function Home() {
@@ -20,7 +21,7 @@ function Home() {
 
   const categoriesArr = Object.values(categoriesObj);
 
-  return (
+  const HomePageData = () => (
     <article>
       <div className={styles.slogan}>
         All of your computer needs at the best prices guaranteed!!
@@ -31,7 +32,7 @@ function Home() {
             <div className={styles.category} key={productId}>
               <Link to={hyphenate(category)}>
                 <div className={styles.imgCont}>
-                  {/* TODO: redundant alt text so removed */}
+                  {/* redundant alt text so removed */}
                   <Img image={productPicUrl} imageStyle="home" imageAlt="" />
                 </div>
                 <h2>{category}</h2>
@@ -42,6 +43,8 @@ function Home() {
       </section>
     </article>
   );
+
+  return categoriesArr.length ? <HomePageData /> : <Error />;
 }
 
 export default Home;

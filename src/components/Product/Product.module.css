@@ -39,6 +39,10 @@
     flex-direction: column;
   }
 
+  .imgCont {
+    margin-right: 0;
+  }
+
   .desc {
     text-align: left;
   }

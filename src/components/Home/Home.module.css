@@ -17,15 +17,9 @@
   margin: 0.8rem;
 }
 
-.category a {
-  text-decoration: none;
-}
-
 .category a h2 {
   color: #286c93;
-  text-decoration: none;
   margin: 0.3rem 0;
-  display: block;
   font-size: 1.1rem;
   font-weight: normal;
 }

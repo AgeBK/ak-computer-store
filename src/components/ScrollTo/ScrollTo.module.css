@@ -1,9 +1,9 @@
 .btn {
   position: fixed;
-  bottom: 10px;
+  bottom: 55px;
   right: 20px;
-  background: transparent;
   border: 0;
   cursor: pointer;
-  /* opacity: 0.8; */
+  opacity: 0.5;
+  background-color: transparent;
 }

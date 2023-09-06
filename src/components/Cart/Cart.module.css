@@ -16,25 +16,16 @@
   width: 15rem;
   cursor: default;
   border: 2px solid#000;
-  position: relative;
 }
 
 .cartClose {
   font-size: 1.5rem;
   position: absolute;
   top: 0;
-  right: 12px;
-}
-
-.list {
-}
-
-.cartItems {
+  right: 0.8rem;
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
   border-bottom: 1px solid #d3d3d3;
 }
@@ -50,10 +41,6 @@
   margin-bottom: 0.5rem;
 }
 
-.qty {
-  flex-grow: 1;
-}
-
 .price {
   font-weight: bold;
   margin-left: auto;
@@ -63,35 +50,7 @@
   display: flex;
 }
 
-.oneItem button {
-  display: inline-block;
-  padding-right: 0.2rem;
-  background-color: #3ca400;
-  padding: 0.1rem 0.6rem;
-  color: #fff;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  cursor: pointer;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0);
-  text-transform: uppercase;
-}
-
-.buttons .remove {
-  background: none !important;
-  border: none;
-  padding: 0 !important;
-  color: #888;
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 0.8rem;
-}
-
 .amount {
-  display: inline-block;
   margin: 0 0.3rem;
   font-size: 1.3rem;
 }
@@ -111,7 +70,6 @@
   margin-left: auto;
 }
 
-/* Cart closed state*/
 .cartClosedCont {
   background-color: #fff;
   z-index: 1;

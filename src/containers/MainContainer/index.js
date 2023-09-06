@@ -4,8 +4,6 @@ import Footer from "../../components/Footer";
 import styles from "./MainContainer.module.css";
 
 function MainContainer({ children }) {
-  console.log("MM");
-
   return (
     <div className={styles.container}>
       <Header />
