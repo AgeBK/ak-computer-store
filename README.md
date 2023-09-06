@@ -1,10 +1,12 @@
 ## About
 
-I built this little mock e-commerce style website from a random JSON file I found online which contains computer store data with accompanying images.
+I built this little mock e-commerce style website from a random JSON file I found online which contains computer store data with accompanying images. The JSON file is hosted on JSONBIN.io
 
 The website has 3 pages, the home page which is a list of all the different categories, it's basically a navigation page, then I have a category page which lists all the products for a particular category, then the product page that displays the individual product. I have built a shopping cart for it as well which you can add products to. The idea being that the user can have a simulated on-line shopping experience while I showcase my React abilities.
 
-The site uses React Context to share common data and functions I use throughout the site, React Router for navigation and 16 different components including a container component and a custom hook. For styling it's using Flexbox via CSS modules.
+The site uses React Context to share common data and functions I use throughout the site, React Router for navigation and 16 different components including a container component and a custom hook. For styling, it's using Flexbox via CSS modules. The site also includes loading and error components and should look good on small and larger screens. Responsive design techniques have been taken into account as well as semantic HTML.
+
+
 
 06/09/23
 
