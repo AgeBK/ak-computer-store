@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { ComputerContext } from "../../context";
 import useCartState from "../../hooks/useCartState";
 import Price from "../Price";
@@ -9,8 +9,6 @@ import styles from "./Cart.module.css";
 function Cart() {
   const { addToCart, cart, removeFromCart } = useContext(ComputerContext);
   const [ref, isOpen, isTouchDevice, handleClose] = useCartState();
-  const highLightValue = useRef(0);
-  let highLight = false;
 
   const cartDetails = Object.values(cart).reduce(
     (acc, { qty, price }) => {
@@ -28,20 +26,12 @@ function Cart() {
   const cartImage =
     totalQty && totalPrice ? "cartNotEmpty.png" : "cartEmpty.png";
 
-  // make cart stand out on update
-  if (totalQty !== highLightValue.current) {
-    highLightValue.current = totalQty;
-    highLight = true;
-  } else {
-    highLight = false;
-  }
-
   const CartClosed = () => {
     return (
       <div className={styles.cartClosedCont}>
         <span
           className={`${styles.cartClosedQty}  ${
-            highLight && styles.cartClosedContQty
+            totalQty && styles.cartClosedContQty
           }`}
         >
           {totalQty}

@@ -2,9 +2,14 @@
 
 I built this little mock e-commerce style website from a random JSON file I found online which contains computer store data with accompanying images.
 
-The website has 3 pages, the home page which is a list of all the different categories, it's basically a navigation page, then I have a category page which lists all the products for a particular category, then the product page that displays the individual product. I have built a shopping cart for it as well which you can add products to. The idea being that the user can have a simulated on-line shopping experience while I showcase my React abilities.
+The website has 3 pages, the home page which is a list of all the different categories, it's basically a navigation page. The category page lists all the products for a particular category and can be sorted alphabetically, by price or sale items. The product page displays all the details about an individual product. I have built a shopping cart for it as well which you can add products to. The idea being that the user can have a simulated on-line shopping experience.
 
-The site uses React Context to share common data and functions I use throughout the site, React Router for navigation and 16 different components including a container component and a custom hook. For styling it's using Flexbox via CSS modules.
+The site uses React Context to share common data and functions I use throughout the site, React Router for navigation and 17 different components including a container component and a custom hook. For styling it's using Flexbox via CSS modules.
+
+07/09/23
+
+- Style change
+- Update readme
 
 06/09/23
 
