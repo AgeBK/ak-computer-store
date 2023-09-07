@@ -32,7 +32,7 @@ function Home() {
             <div className={styles.category} key={productId}>
               <Link to={hyphenate(category)}>
                 <div className={styles.imgCont}>
-                  {/* redundant alt text so removed */}
+                  {/* redundant alt text so removed (WAVE tool) */}
                   <Img image={productPicUrl} imageStyle="home" imageAlt="" />
                 </div>
                 <h2>{category}</h2>
