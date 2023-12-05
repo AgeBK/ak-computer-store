@@ -1,0 +1,62 @@
+.cart {
+  width: 15rem;
+  cursor: default;
+  border: 2px solid#000;
+  max-height: 95vh;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.cartClose {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0.8rem;
+}
+
+.item {
+  padding: 1rem;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.hdr {
+  text-align: center;
+  color: #285cab;
+  margin: 0 0 0.5rem;
+}
+
+.details {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.buttons {
+  display: flex;
+}
+
+.amount {
+  margin: 0 0.3rem;
+  font-size: 1.3rem;
+}
+
+.oneItem {
+  flex-grow: 1;
+}
+
+.total {
+  text-align: right;
+  padding: 0.5rem 1rem;
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.total span:last-child {
+  font-weight: bold;
+  margin-left: auto;
+  font-size: 1.1rem;
+}

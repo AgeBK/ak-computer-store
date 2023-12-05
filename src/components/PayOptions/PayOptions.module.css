@@ -1,0 +1,24 @@
+.list {
+  display: flex;
+  border: 1px solid #f3f3f3;
+  padding: 0.5rem;
+}
+
+.list li {
+  margin-right: 1rem;
+}
+
+.info {
+  font-size: 0.8rem;
+  width: 10rem;
+}
+
+@media screen and (max-width: 600px) {
+  .list li {
+    margin-right: 0;
+  }
+
+  .info {
+    width: 7rem;
+  }
+}

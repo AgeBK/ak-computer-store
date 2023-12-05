@@ -18,6 +18,10 @@
   margin-left: 1rem;
 }
 
+.cartCont {
+  position: relative;
+}
+
 @media screen and (max-width: 500px) {
   .header {
     padding: 0.5rem;

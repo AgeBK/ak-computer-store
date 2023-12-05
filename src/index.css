@@ -31,3 +31,9 @@ hr {
     padding-top: 86px;
   }
 }
+
+@media screen and (max-width: 380px) {
+  article {
+    padding-top: 78px;
+  }
+}

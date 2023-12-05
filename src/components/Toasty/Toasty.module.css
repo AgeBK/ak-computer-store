@@ -1,0 +1,34 @@
+.toasty {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  animation: toasty 1.5s forwards;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  white-space: nowrap;
+  border: 1px solid #e6e6e6;
+  border-left: 3px solid #47d764;
+  border-right: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+  z-index: 1;
+  font-size: 0.9rem;
+}
+
+.toastyTxt {
+  margin-left: 0.5rem;
+  line-height: 0.9rem;
+}
+
+@keyframes toasty {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
